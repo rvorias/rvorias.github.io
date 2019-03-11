@@ -3,6 +3,7 @@ body {
   text-align: center;
   font-family: monaco, monospace;
   background-color: black;
+	font-size: 20px;
 }
 hr {
   color: purple;
@@ -16,12 +17,12 @@ hr {
 h1 {
   display: inline-block;
   background: #fff;
-  font-size: 30px
+  font-size: 50px
 }
 h2 {
   display: inline-block;
   background: #fff;
-  font-size: 20px;
+  font-size: 35px;
 }
 span {
   background: #fd0;
@@ -50,14 +51,14 @@ p {
 .period {
   display: inline-block;
   text-align: left;
-  width: 60%;
+  width: 80%;
   font-weight: bold;
   color: black;
   background: linear-gradient(to bottom, blue, white 50%, red);
 }
 .subject {
   display: inline-block;
-  width: 60%;
+  width: 75%;
   text-align: center;
   font-weight: bold;
 }
