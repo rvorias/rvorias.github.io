@@ -4,40 +4,54 @@ body {
   font-family: monaco, monospace;
   background-color: black;
 }
+hr {
+  color: purple;
+  border-top: 3px dotted #FFFFFF;
+}
+.style11 {
+	height: 6px;
+	background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
+    border: 0;
+}
 h1 {
   display: inline-block;
   background: #fff;
-  font-size: 50px
+  font-size: 30px
 }
 h2 {
   display: inline-block;
   background: #fff;
-  font-size: 30px;
+  font-size: 20px;
 }
 span {
   background: #fd0;
 }
 button {
-  width: 100px;
-  height:  100px;;
+  width: 50px;
+  height: 50px;
   background-color: #fd0; /* Green */
   border: none;
-  color: white;
-  text-align: center;
+  color: black;
   text-decoration: none;
   display: inline-block;
-  font-size: 25px;
+  font-size: 15px;
   font-weight: bold;
   margin: 5px 5px;
   cursor: pointer;
   border-radius: 50%;
+  text-align: center;
+}
+button:hover {
+  background: pink;
 }
 p {
   color: white;
-  font-size: 20px;
 }
 .period {
   text-align: left;
+  font-weight: bold;
+  color: black;
+  background: linear-gradient(to bottom, blue, white 50%, red);
 }
 .subject {
   text-align: center;
@@ -47,3 +61,9 @@ p {
   text-align: center;
   color: pink;
 }
+
+
+
+
+
+

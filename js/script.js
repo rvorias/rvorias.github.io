@@ -1,20 +1,20 @@
 function myFunction(id) {
   var exp = document.getElementById("EXP");
   var edu = document.getElementById("EDU");
-  var pers = document.getElementById("PERS");
+  var bio = document.getElementById("BIO");
   if (id == "EXP"){
     exp.style.display = "block";
     edu.style.display = "none";
-    pers.style.display = "none";
+    bio.style.display = "none";
   }
   if (id == "EDU"){
     exp.style.display = "none";
     edu.style.display = "block";
-    pers.style.display = "none";
+    bio.style.display = "none";
   }
-  if (id == "PERS"){
+  if (id == "BIO"){
     exp.style.display = "none";
     edu.style.display = "none";
-    pers.style.display = "block";
+    bio.style.display = "block";
   }
 }
