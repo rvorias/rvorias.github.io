@@ -7,10 +7,10 @@ body {
 }
 hr {
   color: purple;
-  border-top: 3px dotted #FFFFFF;
+  border-top: 3px dashed #fff;
 }
 .style11 {
-	height: 6px;
+	height: 5px;
 	background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
     border: 0;
 }
@@ -18,6 +18,10 @@ h1 {
   display: inline-block;
   background: #fff;
   font-size: 50px
+}
+.grid-container{
+  display: grid;
+  color: pink;
 }
 h2 {
   display: inline-block;
@@ -43,7 +47,7 @@ button {
   text-align: center;
 }
 button:hover {
-  background: pink;
+  background: linear-gradient(30deg, purple, #fd0 70%);
 }
 p {
   color: white;
@@ -52,7 +56,7 @@ p {
   display: inline-block;
   text-align: left;
   width: 80%;
-	text-shadow: 0 -1px #fff;
+  text-shadow: 1px -1px #fff;
   font-weight: bold;
   color: black;
   background: linear-gradient(to bottom, purple, white 70%, orange);
