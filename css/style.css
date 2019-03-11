@@ -1,0 +1,54 @@
+body {
+  padding-top: 80px;
+  text-align: center;
+  font-family: monaco, monospace;
+  background-color: black;
+}
+h1 {
+  display: inline-block;
+  background: #fff;
+  font-size: 30px
+}
+h2 {
+  display: inline-block;
+  background: #fff;
+  font-size: 20px;
+}
+span {
+  background: #fd0;
+}
+button {
+  width: 50px;
+  height:  50px;;
+  background-color: #fd0; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 5px 5px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+p {
+  color: white;
+}
+.period {
+  text-align: left;
+}
+.subject {
+  text-align: center;
+  font-weight: bold;
+}
+.location {
+  text-align: center;
+  color: pink;
+}
+
+
+
+
+
+
