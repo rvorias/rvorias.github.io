@@ -35,7 +35,7 @@ button {
   color: black;
   text-decoration: none;
   display: inline-block;
-  font-size: 15px;
+  font-size: 25px;
   font-weight: bold;
   margin: 5px 5px;
   cursor: pointer;
@@ -52,6 +52,7 @@ p {
   display: inline-block;
   text-align: left;
   width: 80%;
+	text-shadow: 0 -1px #fff;
   font-weight: bold;
   color: black;
   background: linear-gradient(to bottom, purple, white 70%, orange);
