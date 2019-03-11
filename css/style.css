@@ -54,7 +54,7 @@ p {
   width: 80%;
   font-weight: bold;
   color: black;
-  background: linear-gradient(to bottom, blue, white 50%, red);
+  background: linear-gradient(to bottom, purple, white 50%, orange);
 }
 .subject {
   display: inline-block;
