@@ -7,28 +7,31 @@
 <body onload="myFunction('EDU')">
   <h1>Raphael <span>_vorias</span></h1>
 <br>
-  <h2>Industrial\Knowledge Engineer</h2>
-  <div class="cornerTriangle"></div>
+  <h2 class="outerBox">Industrial\Knowledge Engineer
+    <div class="innerBox">
+      <div class="arrow-up"></div>
+    </div>
+  </h2>
 <hr class="style11">
-<div class="nav-buttons">
-  <button onclick="myFunction('EXP')">EXP</button>
-  <button onclick="myFunction('EDU')">EDU</button>
-  <button onclick="myFunction('BIO')">BIO</button>
+<div>
+  <button id="navButtonEXP" onclick="myFunction('EXP')">EXP</button>
+  <button id="navButtonEDU" onclick="myFunction('EDU')">EDU</button>
+  <button id="navButtonBIO" onclick="myFunction('BIO')">BIO</button>
 </div>
 <div id="EDU">
         <div class="node">
           <p class="period">2018-2019</p>
-          <p class="subject">Master of Artificial Intelligence</p>
+          <p class="subject">Master Artificial Intelligence</p>
           <p class="location">KULeuven, Belgium</p>
         </div>
         <div class="node">
           <p class="period">2013-2014</p>
-          <p class="subject">Master of Science in Industrial Engineering: Electromechanics</p>
+          <p class="subject">Master Industrial Engineering: Electromechanics</p>
           <p class="location">UHasselt - KULeuven, Belgium</p>
         </div>
         <div class="node">
           <p class="period">2010-2013</p>
-          <p class="subject">Bachelor of Science in Industrial Engineering: Electromechanics</p>
+          <p class="subject">Bachelor Industrial Engineering: Electromechanics</p>
           <p class="location">KHLim, Belgium</p>
         </div>
 </div>
@@ -40,10 +43,10 @@
         </div>
 </div>
 <div id="BIO">
-  <p>This website shows my online resume.</p>
+  <p>On this site you can find my online resume.</p>
   <p>Interests:</p>
   <div class="grid-container">
-  <div class="grid-item">Moto Guzzi V50</div>
+  <div class="grid-item">Moto Guzzi</div>
   <div class="grid-item">Science Fiction</div>
   <div class="grid-item">Crafting</div>
   <div class="grid-item">Generative art</div>
