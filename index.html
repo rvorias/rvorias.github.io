@@ -1,59 +1,260 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Raphael Vorias</title>
-<link type="text/css" rel="stylesheet" href="css/style.css"/>
-</head>
-<body onload="myFunction('EDU')">
-  <h1>Raphael <span>_vorias</span></h1>
-<br>
-  <h2 class="outerBox">Industrial\Knowledge Engineer
-    <div class="innerBox">
-      <div class="arrow-up"></div>
+  <head>
+  <title>Raphaël Vorias</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css"/>
+  <script src="https://kit.fontawesome.com/1486e4c301.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="titlehover">
+      <h1 class="titleh1">Raphaël <span class=highlight>_vorias</span></h1>
     </div>
-  </h2>
-<hr class="style11">
-<div>
-  <button id="navButtonEXP" onclick="myFunction('EXP')">EXP</button>
-  <button id="navButtonEDU" onclick="myFunction('EDU')">EDU</button>
-  <button id="navButtonBIO" onclick="myFunction('BIO')">BIO</button>
-</div>
-<div id="EDU">
-        <div class="node">
-          <p class="period">2018-2019</p>
-          <p class="subject">Master Artificial Intelligence</p>
-          <p class="location">KULeuven, Belgium</p>
+    <br>
+    <div class="titlehover">
+      <h2 class="titleh2">Industrial/Computer Vision Engineer
+        <div class="innerBox">
+          <div class="arrow-up"></div>
         </div>
-        <div class="node">
-          <p class="period">2013-2014</p>
-          <p class="subject">Master Industrial Engineering: Electromechanics</p>
-          <p class="location">UHasselt - KULeuven, Belgium</p>
+      </h2>
+    </div>
+    <br>
+
+    <!-- START OF THREE-->
+    <script src="js/three.js"></script>
+    <div id="scene-container">
+      <script>
+        const container = document.querySelector( '#scene-container' );
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera( 35, 500/200, 0.01, 1000 );
+
+        renderer = new THREE.WebGLRenderer({
+                  alpha	   : true,
+                  antialias  : true,});
+        renderer.setSize(500, 200);
+        container.appendChild( renderer.domElement );
+
+        var geometry = new THREE.PlaneGeometry( 20, 45);
+        var material = new THREE.MeshBasicMaterial( {color: 0x5da2f0, side: THREE.DoubleSide} );
+        material.transparent = true;
+        material.opacity = 0.8;
+        var planex = new THREE.Mesh( geometry, material );
+        scene.add( planex);
+
+        var geometry = new THREE.PlaneGeometry( 20, 45);
+        var material = new THREE.MeshBasicMaterial( {color: 0xffa500, side: THREE.DoubleSide} );
+        material.transparent = true;
+        material.opacity = 0.5;
+        var planey = new THREE.Mesh( geometry, material );
+        scene.add( planey );
+
+        var geometry = new THREE.PlaneGeometry( 20, 45);
+        var material = new THREE.MeshBasicMaterial( {color: 0x9c62f8, side: THREE.DoubleSide} );
+        material.transparent = true;
+        material.opacity = 0.5;
+        var planez = new THREE.Mesh( geometry, material );
+        scene.add( planez );
+
+        camera.position.z = 40;
+
+        planex.rotation.x += Math.PI / 2;
+        planez.rotation.y += Math.PI / 2;
+
+        zax = new THREE.Vector3( 0, 0, 1 );
+        xax = new THREE.Vector3( 1, 0, 0 );
+
+        var animate = function () {
+          requestAnimationFrame( animate );
+
+          planex.rotateOnWorldAxis( zax, 0.001 );
+          planey.rotateOnWorldAxis( zax, -0.002 );
+          planez.rotateOnWorldAxis( zax, 0.003 );
+
+          planex.rotateOnWorldAxis( xax, 0.001 );
+          planey.rotateOnWorldAxis( xax, -0.002 );
+          planez.rotateOnWorldAxis( xax, 0.003 );
+
+          renderer.render( scene, camera );
+        };
+
+        animate();
+      </script>
+    </div>
+    <!-- END OF THREE-->
+
+    
+    <p id="intersection">Hi! My name is Raphaël.</p>
+    <br>
+    <p id="intersection">I find myself at the very exciting intersection of</p>
+    <p id="intersection"><i id="deep">Deep Learning</i>, <i id="cg">Computer Graphics</i> and <i id="manufacturing">Manufacturing</i>.</p>
+    <br>
+    <p id="intersection">This page shows some of my realizations and activities.</p>
+
+
+    <!-- START OF PROJECTS-->
+    <h3>Projects</h3>
+    <div class="projects-container">
+      <div class="project">
+        <a href="https://github.com/rvorias" target="_blank">
+        <img class="project-thumbnail" src="images/uvHolo.gif">
+        <div class="project-title">uvHolographics</div>
+        <div class="project-overlay">Data synthesis Blender Add-on<br><i class="fab fa-github" aria-hidden="true"></i></div>
+        </a>
+      </div>
+      <div class="project">
+        <a href="https://github.com/rvorias/ganbreeder" target="_blank">
+          <img class="project-thumbnail" src="https://raw.githubusercontent.com/rvorias/GANtoolsGUI/master/gitData/example5key2.gif">
+          <div class="project-title">GanBreeder GUI</div>
+          <div class="project-overlay">GAN generation GUI in Python<br><i class="fab fa-github" aria-hidden="true"></i></div>
+        </a>
+      </div>
+      <div class="project">
+        <a href="https://github.com/rvorias/ganbreeder" target="_blank">
+          <img class="project-thumbnail" src="images/visualitis.gif">
+          <div class="project-title">Cincinatti Codec</div>
+          <div class="project-overlay">Audio-reactive visuals in Processing<br><i class="fab fa-github" aria-hidden="true"></i></div>
+        </a>
+      </div>
+      <div class="project">
+          <a href="https://github.com/rvorias/NAB" target="_blank">
+            <img class="project-thumbnail" src="images/nab_thumb.png">
+            <div class="project-title">School projects</div>
+            <div class="project-overlay">Master thesis and CNNs<br><i class="fab fa-github" aria-hidden="true"></i></div>
+          </a>
         </div>
-        <div class="node">
-          <p class="period">2010-2013</p>
-          <p class="subject">Bachelor Industrial Engineering: Electromechanics</p>
-          <p class="location">KHLim, Belgium</p>
+    </div>
+    <!-- END OF PROJECTS-->
+
+
+    <!-- START OF TIMELINE-->
+    <h3>Timeline</h3>
+    <section id="cd-timeline" class="cd-container">
+      <!-- TIMELINE : KAPERNIKOV-->
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-picture"></div>        
+        <div class="cd-timeline-content">
+          <h2>Kapernikov</h2>
+          <div class="timeline-content-info">
+            <span class="timeline-content-info-title">
+              <i class="fa fa-certificate" aria-hidden="true"></i>
+              Computer Vision Engineer
+            </span>
+            <span class="timeline-content-info-date">
+              <i class="fa fa-calendar-o" aria-hidden="true"></i>
+              Nov 2019 - present
+            </span>
+          </div>
+          <p>Solving computer vision problems. Applying deep learning methodologies.</p>
+          <ul class="content-skills">
+            <li>Docker <i class="fab fa-docker"></i></li>
+            <li>CI/CD</li>
+            <li>TensorFlow</li>
+            <li>PyTorch</li>
+            <li>TensorRT</li>
+          </ul>
         </div>
-</div>
-<div id="EXP">
-        <div class="node">
-          <p class="period">2014-2016</p>
-          <p class="subject">Manufacturing\Equipment Engineer Sensors</p>
-          <p class="location">ASML, Eindhoven, Netherlands</p>
+      </div>
+      <!-- TIMELINE : KAPERNIKOV-->
+
+      <!-- TIMELINE : MASTER OF AI-->
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie"></div>
+        <div class="cd-timeline-content">
+          <h2>Master of AI</h2>
+          <div class="timeline-content-info">
+            <span class="timeline-content-info-title">
+              <i class="fa fa-certificate" aria-hidden="true"></i>
+              Magna Cum Laude
+            </span>
+            <span class="timeline-content-info-date">
+              <i class="fa fa-calendar-o" aria-hidden="true"></i>
+              2018-2019
+            </span>
+          </div>
+          <p>Option Engineering and Comp.Sc.</p>
+          <p>Master Thesis: Anomaly Detection in Industrial Processes<p>
+              <p>Courses: Computer Vision, Neural Networks, Machine Learning, Genetic Algorithms, Probabilistic Reasoning, Philosophy of the Mind and AI</p>
+              <ul class="content-skills">
+                <li>Linux <i class="fab fa-linux"></i></li>
+                <li>Python <i class="fab fa-python"></i></li>
+                <li>Prolog</li>
+                <li>Keras</li>
+                <li>Github <i class="fab fa-github" aria-hidden="true"></i></li>
+              </ul>
         </div>
-</div>
-<div id="BIO">
-  <p>On this site you can find my online resume.</p>
-  <p>Interests:</p>
-  <div class="grid-container">
-  <div class="grid-item">Moto Guzzi</div>
-  <div class="grid-item">Science Fiction</div>
-  <div class="grid-item">Crafting</div>
-  <div class="grid-item">Generative art</div>
-  <div class="grid-item">Backpacking</div>
-  </div>
-  <p>Contact me at raphaelvorias@gmail.com</p>
-</div>
-<script type="text/javascript" src="js/script.js"></script>
-</body>
+      </div>
+      <!-- TIMELINE : MASTER OF AI-->
+
+      <!-- TIMELINE : WORLD TRIP-->
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-picture"></div>
+        <div class="cd-timeline-content">
+          <h2>Solo World Trip</h2>
+          <p>For 14 months I have journeyed to multiple locations over the world. I learned Spanish, mastered Google Maps and
+            above all gained a healthy portion of life wisdom.</p>
+        </div>
+      </div>
+      <!-- TIMELINE : WORLD TRIP-->
+
+      <!-- TIMELINE : ASML-->
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-location">
+        </div>
+
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-picture">
+            </div>
+  
+            <div class="cd-timeline-content">
+              <h2>ASML</h2>
+              <div class="timeline-content-info">
+                <span class="timeline-content-info-title">
+                  <i class="fa fa-certificate" aria-hidden="true"></i>
+                  Manufacturing Engineer
+                </span>
+                <span class="timeline-content-info-date">
+                  <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                  Feb 2015 - Nov 2017
+                </span>
+                <p>D&E Manufacturing and Equipment engineer for lens interferometry sensors. Following up issues, reporting to stakeholders and solving problems.</p>
+              </div>
+              <p></p>
+              <ul class="content-skills">
+              <li>HighTech</li>
+              <li>Nano-lithography</li>
+              <li>Manufacturing</li>
+              <li>Quality engineering</li>
+              <li>Optics</li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      <!-- TIMELINE : ASML-->
+
+      <!-- TIMELINE : INDUSTRIAL ENGINEER-->
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie"></div>
+        <div class="cd-timeline-content">
+          <h2>Master of Science: Industrial Engineering</h2>
+          <div class="timeline-content-info">
+            <span class="timeline-content-info-title">
+              <i class="fa fa-certificate" aria-hidden="true"></i>
+              Cum Laude
+            </span>
+            <span class="timeline-content-info-date">
+              <i class="fa fa-calendar-o" aria-hidden="true"></i>
+              2014-2015
+            </span>
+          </div>
+          <p>Option Electro-Mechanics</p>
+          <p>Master Thesis: Electro-active Properties of Elastomers: finite element method modelling and experimental results<p>
+              <p>Courses: CAD/CAM, Thermodynamics, Aerodynamics, Electro-technics, Production Methods</p>
+              <ul class="content-skills">
+                <li>ProE</i>
+                <li>Matlab</i></li>
+              </ul>
+        </div>
+      </div>
+      <!-- TIMELINE : INDUSTRIAL ENGINEER-->
+    </section>
+  </body>
 </html>

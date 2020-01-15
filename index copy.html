@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Raphael Vorias</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css"/>
+  <script src="https://kit.fontawesome.com/1486e4c301.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="titlehover">
+      <h1 class="titleh1">Raphael <span class=highlight>_vorias</span></h1>
+    </div>
+    <br>
+    <div class="titlehover">
+      <h2 class="titleh2">Industrial/Computer Vision Engineer
+        <div class="innerBox">
+          <div class="arrow-up"></div>
+        </div>
+      </h2>
+    </div>
+    <br>
+
+    <script src="js/three.js"></script>
+    <div id="scene-container">
+    <script>
+      const container = document.querySelector( '#scene-container' );
+      var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera( 35, 500/200, 0.01, 1000 );
+
+      var renderer = new THREE.WebGLRenderer();
+      renderer.setSize(500, 200);
+      container.appendChild( renderer.domElement );
+
+      var geometry = new THREE.PlaneGeometry( 20, 20);
+      var material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+      material.transparent = true;
+      material.opacity = 0.5;
+      var planex = new THREE.Mesh( geometry, material );
+      scene.add( planex);
+
+      var geometry = new THREE.PlaneGeometry( 20, 20);
+      var material = new THREE.MeshBasicMaterial( {color: 0xff00ff, side: THREE.DoubleSide} );
+      material.transparent = true;
+      material.opacity = 0.5;
+      var planey = new THREE.Mesh( geometry, material );
+      scene.add( planey );
+
+      var geometry = new THREE.PlaneGeometry( 20, 20);
+      var material = new THREE.MeshBasicMaterial( {color: 0x00ffff, side: THREE.DoubleSide} );
+      material.transparent = true;
+      material.opacity = 0.5;
+      var planez = new THREE.Mesh( geometry, material );
+      scene.add( planez );
+
+      camera.position.z = 30;
+
+      planex.rotation.x += Math.PI / 2;
+      planez.rotation.y += Math.PI / 2;
+
+      zax = new THREE.Vector3( 0, 0, 1 )
+      xax = new THREE.Vector3( 1, 0, 0 )
+
+      var animate = function () {
+        requestAnimationFrame( animate );
+
+        planex.rotateOnWorldAxis( zax, 0.001 )
+        planey.rotateOnWorldAxis( zax, 0.001 )
+        planez.rotateOnWorldAxis( zax, 0.001 )
+
+        planex.rotateOnWorldAxis( xax, 0.001 )
+        planey.rotateOnWorldAxis( xax, 0.001 )
+        planez.rotateOnWorldAxis( xax, 0.001 )
+
+        renderer.render( scene, camera );
+      };
+
+      const vector = new THREE.Vector3(10, 10, 0);
+      vector.project(camera); // `camera` is a THREE.PerspectiveCamera
+      const canvas = renderer.domElement;
+      vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
+      vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
+
+      const annotation = document.querySelector('.annotation');
+      annotation.style.top = `${vector.y}px`;
+      annotation.style.left = `${vector.x}px`;
+
+      animate();
+    </script>
+    </div>
+    <section id="cd-timeline" class="cd-container">
+        <div class="cd-timeline-block">
+          <div class="cd-timeline-img cd-picture">
+          </div>
+
+          <div class="cd-timeline-content">
+            <h2>Kapernikov</h2>
+            <div class="timeline-content-info">
+              <span class="timeline-content-info-title">
+                <i class="fa fa-certificate" aria-hidden="true"></i>
+                Computer Vision Engineer
+              </span>
+              <span class="timeline-content-info-date">
+                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                Nov 2019 - present
+              </span>
+            </div>
+            <p>Working alongside the designer team implementing the designs, also developing custom solutions to address team necessities.</p>
+            <ul class="content-skills">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>jQuery</li>
+            <li>Wordpress</li>
+            </ul>
+          </div> <!-- cd-timeline-content -->
+        </div> <!-- cd-timeline-block -->
+
+        <div class="cd-timeline-block">
+          <div class="cd-timeline-img cd-movie">
+          </div> <!-- cd-timeline-img -->
+
+          <div class="cd-timeline-content">
+            <h2>Title of section 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+            <span class="cd-date">Jan 18</span>
+          </div> <!-- cd-timeline-content -->
+        </div> <!-- cd-timeline-block -->
+
+        <div class="cd-timeline-block">
+          <div class="cd-timeline-img cd-picture">
+          </div> <!-- cd-timeline-img -->
+
+          <div class="cd-timeline-content">
+            <h2>Title of section 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
+            <span class="cd-date">Jan 24</span>
+          </div> <!-- cd-timeline-content -->
+        </div> <!-- cd-timeline-block -->
+
+        <div class="cd-timeline-block">
+          <div class="cd-timeline-img cd-location">
+          </div> <!-- cd-timeline-img -->
+
+          <div class="cd-timeline-content">
+            <h2>Title of section 4</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+            <span class="cd-date">Feb 14</span>
+          </div> <!-- cd-timeline-content -->
+        </div> <!-- cd-timeline-block -->
+
+        <div class="cd-timeline-block">
+          <div class="cd-timeline-img cd-location">
+          </div> 
+
+          <div class="cd-timeline-content">
+            <h2>Title of section 5</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
+            <span class="cd-date">Feb 18</span>
+          </div> <!-- cd-timeline-content -->
+        </div> <!-- cd-timeline-block -->
+
+        <div class="cd-timeline-block">
+          <div class="cd-timeline-img cd-movie">
+          </div> <!-- cd-timeline-img -->
+
+          <div class="cd-timeline-content">
+            <h2>Final Section</h2>
+            <p>This is the content of the last section</p>
+            <span class="cd-date">Feb 26</span>
+          </div> <!-- cd-timeline-content -->
+        </div> <!-- cd-timeline-block -->
+      </section> <!-- cd-timeline -->
+      
+    <div id="EDU">
+            <div class="node">
+              <p class="period">2018-2019</p>
+              <p class="subject">Master Artificial Intelligence</p>
+              <p class="location">KULeuven, Belgium</p>
+            </div>
+            <div class="node">
+              <p class="period">2013-2014</p>
+              <p class="subject">Master Industrial Engineering: Electromechanics</p>
+              <p class="location">UHasselt - KULeuven, Belgium</p>
+            </div>
+            <div class="node">
+              <p class="period">2010-2013</p>
+              <p class="subject">Bachelor Industrial Engineering: Electromechanics</p>
+              <p class="location">KHLim, Belgium</p>
+            </div>
+    </div>
+    <div id="EXP">
+            <div class="node">
+              <p class="period">2014-2016</p>
+              <p class="subject">Manufacturing\Equipment Engineer Sensors</p>
+              <p class="location">ASML, Eindhoven, Netherlands</p>
+            </div>
+    </div>
+    <div id="BIO">
+      <p>On this site you can find my online resume.</p>
+      <p>Interests:</p>
+      <div class="grid-container">
+      <div class="grid-item">Moto Guzzi</div>
+      <div class="grid-item">Science Fiction</div>
+      <div class="grid-item">Crafting</div>
+      <div class="grid-item">Generative art</div>
+      <div class="grid-item">Backpacking</div>
+      </div>
+      <p>Contact me at raphaelvorias@gmail.com</p>
+    </div>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>
